@@ -26,3 +26,10 @@ This lab showcases the practical application of DNS and provides guidance on its
 - A-Record Exercise
 - Local DNS Cache Exercise
 - CNAME Record Exercise
+
+
+<h2>A-Record Exercise</h2>
+<p>
+
+An A-record, or Address Record, is a type of DNS (Domain Name System) record that links a domain name to its corresponding IPv4 address. It helps translate human-readable domain names (like w<span>ww.</span>example.com) into machine-readable IP addresses (such as 192.168.1.1), allowing computers to locate and connect to each other on the internet.
+</p>
