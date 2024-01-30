@@ -40,7 +40,7 @@ First, connect to both the DC-1 and Client-1 VMs through the Remote Desktop Conn
 <img src="https://imgur.com/LZRlUoX.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-You will notice that it will fail because it cannot find any host named 'mainframe'. This is because as Client-1 attempts to ping 'mainframe', it will check its local cache for a hostname of 'mainframe', not find it, then continue to search it's Host file, then it's DNS server for any records. However, since we currently do not have any records with the name 'mainframe', the ping will fail.
+You will notice that it will fail because it cannot find any host named 'mainframe'. This is because as Client-1 attempts to ping 'mainframe', it will check its local cache for a hostname of 'mainframe', not find it, then continue to search its Host file, then its DNS server for any records. However, since we currently do not have any records with the name 'mainframe', the ping will fail.
 
 To create an A-record with the name 'mainframe', go to the DC-1 VM and open the DNS manager from the Server Manager Application. Then within the DNS manager, right-click and select "New Host (A or AAAA). 
 </p>
@@ -61,4 +61,20 @@ Head back into Client-1 and try to ping 'mainframe' once again. You will notice 
 </p>
 <p>
 <img src="https://imgur.com/ICaOy2J.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+
+<h2>Local DNS Cache</h2>
+<p>
+For this step, we will change the IP address of the A-Record in the previous exercise and observe Client-1's behavior as we try to ping 'mainframe' once again. Head into the DC-1 VM and edit the mainframe A-record properties and change the IP address to 8.8.8.8. Once changed, head back into Client-1 and ping mainframe from the command prompt once more.
+</p>
+<p>
+<img src="https://imgur.com/7tuixz3.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+You will see after pinging mainframe, although we have changed the IP address associated with it, Client-1 is still receiving a response from the previous IP address that was associated with mainframe. This is because the old IP address is locally cached and stored on the VM. It doesn't need to communicate with the DNS server since it already has a cached record of mainframe.  We can view this if we input the command ipconfig /displaydns in Client-1's command prompt. You will see that the previous IP address is still associated with mainframe.
+</p>
+<p>
+<img src="https://imgur.com/13TTJiY.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
