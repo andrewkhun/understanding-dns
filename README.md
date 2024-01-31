@@ -26,7 +26,7 @@ This lab showcases the practical application of DNS and provides guidance on its
 - A-Record Exercise
 - Local DNS Cache Exercise
 - CNAME Record Exercise
-
+- Delete Resources or Continue to Next Lab
 
 <h2>A-Record Exercise</h2>
 <p>
@@ -110,4 +110,15 @@ Head back into Client-1 and input the command 'ping search'.
 </p>
 <p>
 You can see the ping command went through to find the 'search' alias which points to w<span>ww.</span>google.com. If we perform the nslookup search command, we can see the DNS information associated with 'search'. 
+</p>
+
+
+<h2>Delete Resources or Continue to Next Lab</h2>
+<p>
+Congratulations, you know have increased your knowledge of DNS! At this point, you can either head into the Azure Portal and delete the resource groups to prevent incurring any costs or you can continue to the next lab that will use the same lab environment currently set up.
+
+If you would like to delete the resource groups, navigate to the Azure Portal and click Resource Groups. Click on each Resource Group, then click on Delete Resource Group. Copy and paste the name of the resource group to confirm deletion. Then confirm each group has been deleted.
+
+If you would like to go to the next lab, click the link below:
+  - [Network File Shares and Permissions](https://github.com/andrewkhun/network-fileshare)
 </p>
