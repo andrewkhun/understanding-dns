@@ -78,3 +78,36 @@ You will see after pinging mainframe, although we have changed the IP address as
 <p>
 <img src="https://imgur.com/13TTJiY.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
+<p>
+To update the cache on Client-1, input the command ipconfig /flushdns to empty the cache. If you are unable to execute the command, re-open Command Prompt as Administrator. Once the command has been executed, ping mainframe once again and you will see an updated ping attempt to the new IP address. If you input the command ipconfig /displaydns, you can see the updated IP address associated with the A-Record.
+</p>
+<p>
+<img src="https://imgur.com/JVR4dbE.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+
+
+
+
+
+<h2>CNAME Record Exercise</h2>
+<p>
+A CNAME (Canonical Name) is a type of DNS record used to alias one domain name to another. It is often used to make one domain an alias of another, allowing users to access a website or resource using different domain names.
+
+To make a CNAME record the process is very similar to creating an A-Record. Head back into DC-1 and inside the DNS Manager, right-click and select New Alias (CNAME)...
+</p>
+<p>
+<img src="https://imgur.com/p8hmdTv.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Name the new Alias name 'search' and for FQDN type in w<span>ww.</span>google.com and click OK. This will associate the name 'search' with w<span>ww.</span>google.com. 
+
+Head back into Client-1 and input the command 'ping search'.
+</p>
+<p>
+<img src="https://imgur.com/hBuxE9C.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+You can see the ping command went through to find the 'search' alias which points to w<span>ww.</span>google.com. If we perform the nslookup search command, we can see the DNS information associated with 'search'. 
+</p>
